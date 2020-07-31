@@ -1,13 +1,13 @@
 from IPython.display import clear_output
 row4 = [" "," "," "," "," "," "," "," "," "," "]
+#It dispaly the game screen
 def display(row4):
     print(row4[1], "|", row4[2], "|", row4[3])
     print("-", "-", "-","-","-")
     print(row4[4], "|", row4[5], "|", row4[6])
     print("-", "-", "-","-","-")
     print(row4[7], "|", row4[8], "|", row4[9])
-
-
+#it help you to make a choice of O and X
 def marker_choice():
     player1=" "
     while player1 not in ["X", "O"]:
@@ -20,7 +20,7 @@ def marker_choice():
             else:
                 player2 = "X"
     return ((player1, player2))
-
+#it helps you to take a input 
 def take_input(board, marker):
     p=False
     while p==False:
@@ -35,13 +35,11 @@ def take_input(board, marker):
                 p=False
                 print("Please enter a correct value")
     board[val]=marker
-   
+    
 def gameon_choice():
     gameon = input("Do you want to play the game  ? enter [Y or N]")
     return gameon == "Y"
-
-    
-
+#main program
 player=[]
 display(row4)
 gameon=True
@@ -66,8 +64,7 @@ while gameon==True:
         count=count+1
         if row4[1]==row4[2]==row4[3]=="X" or row4[4]==row4[5]==row4[6]=="X" or row4[7]==row4[8]==row4[9]=="X" or row4[1]==row4[4]==row4[7]=="X" or row4[2]==row4[5]==row4[8]=="X" or row4[3]==row4[6]==row4[9]=="X" or row4[1]==row4[5]==row4[9]=="X" or row4[3]==row4[5]==row4[7]=="X" or row4[1]==row4[2]==row4[3]=="O" or row4[4]==row4[5]==row4[6]=="O" or row4[7]==row4[8]==row4[9]=="O" or row4[1]==row4[4]==row4[7]=="O" or row4[2]==row4[5]==row4[8]=="O" or row4[3]==row4[6]==row4[9]=="O" or row4[1]==row4[5]==row4[9]=="O" or row4[3]==row4[5]==row4[7]=="O":
             if count%2==0:
-                print("Player1 wins")
-                
+                print("Player1 wins")             
             else:
                 print("Player2 wins")
             win=True
@@ -85,4 +82,3 @@ while gameon==True:
     else:
         clear_output()
         print("Thank You! For playing the game....\n I hope you will come back very soon")
-        
